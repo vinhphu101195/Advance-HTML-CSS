@@ -6,7 +6,7 @@
     background-image: linear-gradient(
         to right bottom,
         $color-primary-light, $color-primary-dark),
-        url(../img/hero.jpg);
+        url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
@@ -14,6 +14,16 @@
     /* for cutting */
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     -webkit-clip-path:polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), // 600 chia 16 px
+    (min-width:125em) //  2000 chia 16 px
+    {
+        background-image: linear-gradient(
+            to right bottom,
+            $color-secondary-light, $color-secondary-dark),
+            url(../img/hero.jpg);
+    }
+
 
     @include respond(phone){
         clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
